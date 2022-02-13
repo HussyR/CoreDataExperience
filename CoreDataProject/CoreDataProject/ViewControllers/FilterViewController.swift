@@ -19,11 +19,31 @@ class FilterViewController: UITableViewController {
     var selectedPredicate: NSPredicate?
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)
     
+    let predicateTags = [1,2,3,4,5,6]
+    let sortTags = [7,8,9]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fillAllLabels()
 
     }
+    
+    //MARK: UILogic
+    
+    private func clearPredicatesLabelCheckMarks() {
+        predicateTags.forEach { [weak self] in
+            guard let self = self else {return}
+            (self.view.viewWithTag($0) as? UITableViewCell)?.accessoryType = .none
+        }
+    }
+    
+    private func clearSortLabelCheckMarks() {
+        sortTags.forEach { [weak self] in
+            guard let self = self else {return}
+            (self.view.viewWithTag($0) as? UITableViewCell)?.accessoryType = .none
+        }
+    }
+    
     
     //MARK: UIActions
 
@@ -102,9 +122,13 @@ class FilterViewController: UITableViewController {
 extension FilterViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) else {return}
+        if indexPath.section <= 1 {
+            clearPredicatesLabelCheckMarks()
+        } else {
+            clearSortLabelCheckMarks()
+        }
         switch cell {
         case maleCell:
-            print("male")
             selectedPredicate = maleGenderPredicate
         case femaleCell:
             selectedPredicate = femaleGenderPredicate
@@ -128,7 +152,7 @@ extension FilterViewController {
         cell.accessoryType = .checkmark
     }
 }
-//MARK: Наполнение надписей с количеством
+//MARK: Наполнение надписей с количеством сущностей
 extension FilterViewController {
     
     private func fillAllLabels() {
