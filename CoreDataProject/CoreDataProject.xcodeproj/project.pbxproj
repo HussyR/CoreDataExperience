@@ -14,6 +14,10 @@
 		835302C627B94D7600EC89D3 /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 835302C427B94D7600EC89D3 /* CoreDataProject.xcdatamodeld */; };
 		835302C827B94D7700EC89D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 835302C727B94D7700EC89D3 /* Assets.xcassets */; };
 		835302CB27B94D7700EC89D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835302C927B94D7700EC89D3 /* LaunchScreen.storyboard */; };
+		835302D327B94E5B00EC89D3 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835302D227B94E5B00EC89D3 /* FilterViewController.swift */; };
+		835302D527B94EA000EC89D3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835302D427B94EA000EC89D3 /* Model.swift */; };
+		835302D927B94F4900EC89D3 /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 835302D827B94F4900EC89D3 /* seed.json */; };
+		835302DB27B9558A00EC89D3 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835302DA27B9558A00EC89D3 /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		835302C727B94D7700EC89D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		835302CA27B94D7700EC89D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		835302CC27B94D7700EC89D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		835302D227B94E5B00EC89D3 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		835302D427B94EA000EC89D3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		835302D827B94F4900EC89D3 /* seed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
+		835302DA27B9558A00EC89D3 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +68,34 @@
 			children = (
 				835302BB27B94D7600EC89D3 /* AppDelegate.swift */,
 				835302BD27B94D7600EC89D3 /* SceneDelegate.swift */,
-				835302BF27B94D7600EC89D3 /* ViewController.swift */,
+				835302D727B94EB100EC89D3 /* Model */,
+				835302D627B94EA900EC89D3 /* ViewControllers */,
 				835302C127B94D7600EC89D3 /* Main.storyboard */,
 				835302C727B94D7700EC89D3 /* Assets.xcassets */,
 				835302C927B94D7700EC89D3 /* LaunchScreen.storyboard */,
 				835302CC27B94D7700EC89D3 /* Info.plist */,
+				835302D827B94F4900EC89D3 /* seed.json */,
 				835302C427B94D7600EC89D3 /* CoreDataProject.xcdatamodeld */,
 			);
 			path = CoreDataProject;
+			sourceTree = "<group>";
+		};
+		835302D627B94EA900EC89D3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				835302BF27B94D7600EC89D3 /* ViewController.swift */,
+				835302D227B94E5B00EC89D3 /* FilterViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		835302D727B94EB100EC89D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				835302D427B94EA000EC89D3 /* Model.swift */,
+				835302DA27B9558A00EC89D3 /* JSONParser.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +158,7 @@
 			files = (
 				835302CB27B94D7700EC89D3 /* LaunchScreen.storyboard in Resources */,
 				835302C827B94D7700EC89D3 /* Assets.xcassets in Resources */,
+				835302D927B94F4900EC89D3 /* seed.json in Resources */,
 				835302C327B94D7600EC89D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,7 +173,10 @@
 				835302C027B94D7600EC89D3 /* ViewController.swift in Sources */,
 				835302BC27B94D7600EC89D3 /* AppDelegate.swift in Sources */,
 				835302C627B94D7600EC89D3 /* CoreDataProject.xcdatamodeld in Sources */,
+				835302D527B94EA000EC89D3 /* Model.swift in Sources */,
 				835302BE27B94D7600EC89D3 /* SceneDelegate.swift in Sources */,
+				835302D327B94E5B00EC89D3 /* FilterViewController.swift in Sources */,
+				835302DB27B9558A00EC89D3 /* JSONParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
