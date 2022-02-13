@@ -22,6 +22,14 @@ class ViewController: UIViewController {
         fetchAndReload()
     }
     
+//    MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nc = segue.destination as? UINavigationController,
+              let vc = nc.viewControllers.first as? FilterViewController
+        else {return}
+        vc.delegate = self
+    }
+    
     //MARK: Helpers
     
     
@@ -59,7 +67,7 @@ class ViewController: UIViewController {
             person.name = charactersModel.name
             person.episodes = Int16(charactersModel.episode.count)
             person.gender = charactersModel.gender
-            person.id = Int16(charactersModel.id)
+            person.iD = Int16(charactersModel.iD)
             person.image = charactersModel.image
             person.status = charactersModel.status
         }
@@ -97,4 +105,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
 
+}
+
+extension ViewController: FilterViewControllerDelegate {
+    func filterViewController(filter: FilterViewController, predicate: NSPredicate?, sort: NSSortDescriptor?) {
+        guard let fetchRequest = fetchRequest else {return}
+        fetchRequest.predicate = nil
+        fetchRequest.sortDescriptors = nil
+        fetchRequest.predicate = predicate
+        if let sort = sort {
+            fetchRequest.sortDescriptors = [sort]
+        }
+        fetchAndReload()
+    }
 }

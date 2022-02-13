@@ -8,7 +8,7 @@
 import Foundation
 
 struct CharacterModel: Codable {
-    let id: Int
+    let iD: Int
     let name: String
     let status: String
     let gender: String
